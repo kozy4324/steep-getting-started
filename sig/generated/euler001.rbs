@@ -1,12 +1,12 @@
 # Generated from euler001.rb with RBS::Inline
 
 class Object
-  # : (untyped up_to) -> untyped
-  def numbers: (untyped up_to) -> untyped
+  # : (Integer up_to) -> Array[Integer]
+  def numbers: (Integer up_to) -> Array[Integer]
 
-  # : (untyped numbers) -> untyped
-  def only_multiples_of_3_or_5: (untyped numbers) -> untyped
+  # : (Array[Integer] numbers) -> Array[Integer]
+  def only_multiples_of_3_or_5: (Array[Integer] numbers) -> Array[Integer]
 
-  # : (untyped numbers) -> untyped
-  def sum_up: (untyped numbers) -> untyped
+  # : (Array[Integer] numbers) -> Integer
+  def sum_up: (Array[Integer] numbers) -> Integer
 end
