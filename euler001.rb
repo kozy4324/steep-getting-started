@@ -8,7 +8,7 @@ class Object
 
   #: (Array[Integer] numbers) -> Array[Integer]
   def only_multiples_of_3_or_5(numbers)
-    numbers.map { |n| n % 3 == 0 || n % 5 == 0 ? n : 0 }
+    numbers.select { |n| n % 3 == 0 || n % 5 == 0 }
   end
 
   #: (Array[Integer] numbers) -> Integer
