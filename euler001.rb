@@ -3,7 +3,7 @@ def numbers(up_to)
 end
 
 def only_multiples_of_3_or_5(numbers)
-  numbers.map { it % 3 == 0 || it % 5 == 0 ? it : 0 }
+  numbers.map { |n| n % 3 == 0 || n % 5 == 0 ? n : 0 }
 end
 
 def sum_up(numbers)
