@@ -1,0 +1,12 @@
+# Generated from euler001.rb with RBS::Inline
+
+class Object
+  # : (untyped up_to) -> untyped
+  def numbers: (untyped up_to) -> untyped
+
+  # : (untyped numbers) -> untyped
+  def only_multiples_of_3_or_5: (untyped numbers) -> untyped
+
+  # : (untyped numbers) -> untyped
+  def sum_up: (untyped numbers) -> untyped
+end
