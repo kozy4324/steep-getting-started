@@ -3,15 +3,15 @@
 Initialize steep:
 
 ```
-$ bundle add rbs
-$ bundle add rbs-inline
-$ bundle add steep
-$ bundle exec steep init
+bundle add rbs
+bundle add rbs-inline
+bundle add steep
+bundle exec steep init
 ```
 
 Edit Sttepfile:
 
-```
+```rb
 target :app do
   check "."
   signature "sig"
@@ -23,19 +23,44 @@ end
 Generate rbs file by `rbs prototype` command:
 
 ```
-$ rbs prototype rb --out-dir=sig euler001.rb
+rbs prototype rb --out-dir=sig .
 ```
 
 Copy type definitions from rbs file to rb file
 
+```diff
+diff --git a/euler001.rb b/euler001.rb
+index f68ae60..8ccd8b5 100644
+--- a/euler001.rb
++++ b/euler001.rb
+@@ -1,12 +1,17 @@
++# rbs_inline: enabled
++
+ class Object
++  #: (untyped up_to) -> untyped
+   def numbers(up_to)
+     (1...up_to).to_a
+   end
+ 
++  #: (untyped numbers) -> untyped
+   def only_multiples_of_3_or_5(numbers)
+     numbers.map { |n| n % 3 == 0 || n % 5 == 0 ? n : 0 }
+   end
+ 
++  #: (untyped numbers) -> untyped
+   def sum_up(numbers)
+     numbers.reduce(0) { |sum, it| sum + it }
+   end
+```
+
 Clean up sig directory:
 
 ```
-$ rm -fr sig
+rm -fr sig
 ```
 
 Create rbs file from rbs-inline comments:
 
 ```
-$ bundle exec rbs-inline . --output sig
+bundle exec rbs-inline --output sig .
 ```
