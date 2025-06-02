@@ -123,3 +123,6 @@ Regenerate rbs files:
 ```
 bundle exec rbs-inline --output sig .
 ```
+
+Good luck!
+
